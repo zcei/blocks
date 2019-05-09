@@ -4,6 +4,8 @@ import { Styled } from 'theme-ui'
 export default (props, editor, next) => {
   const { node, attributes, children } = props
 
+  console.log(node)
+
   switch (node.type) {
     case 'block-quote':
       return <Styled.blockquote {...attributes}>{children}</Styled.blockquote>
@@ -34,6 +36,7 @@ export default (props, editor, next) => {
     case 'hr':
       return <Styled.hr {...attributes} />
     default:
+      console.log(node)
       return next()
   }
 }
